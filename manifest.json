@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Tablo Gösterici",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Tabloları göster"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "viewer.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}

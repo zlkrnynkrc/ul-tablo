@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        :root {
+            --bg: #fff;
+            --fg: #111827;
+            --mut: #6b7280;
+            --bd: #e5e7eb;
+            --hd: #f3f4f6;
+            --ac: #2563eb;
+            --hv: #eff6ff
+        }
+
+        @media (prefers-color-scheme:dark) {
+            :root {
+                --bg: #1f2937;
+                --fg: #f3f4f6;
+                --mut: #9ca3af;
+                --bd: #374151;
+                --hd: #111827;
+                --ac: #60a5fa;
+                --hv: #1e3a5f
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: system-ui, sans-serif
+        }
+
+        body {
+            margin: 0;
+            width: 360px;
+            max-height: 480px;
+            background: var(--bg);
+            color: var(--fg);
+            display: flex;
+            flex-direction: column
+        }
+
+        .hd {
+            padding: 10px 12px 8px
+        }
+
+        h3 {
+            margin: 0 0 8px 0;
+            font-size: 13px;
+            font-weight: 600
+        }
+
+        .seg {
+            display: flex;
+            border: 1px solid var(--bd);
+            border-radius: 8px;
+            overflow: hidden
+        }
+
+        .seg button {
+            flex: 1;
+            border: 0;
+            background: var(--bg);
+            color: var(--fg);
+            padding: 7px 10px;
+            font-size: 12.5px;
+            cursor: pointer;
+            border-right: 1px solid var(--bd)
+        }
+
+        .seg button:last-child {
+            border-right: 0
+        }
+
+        .seg button.on {
+            background: var(--ac);
+            color: #fff;
+            font-weight: 600
+        }
+
+        .plist {
+            flex: 1;
+            overflow: auto;
+            border-top: 1px solid var(--bd)
+        }
+
+        .plist button {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            width: 100%;
+            text-align: left;
+            padding: 9px 12px;
+            border: 0;
+            border-bottom: 1px solid var(--bd);
+            background: none;
+            color: var(--fg);
+            cursor: pointer;
+            font-size: 13px
+        }
+
+        .plist button:hover {
+            background: var(--hv)
+        }
+
+        .plist button small {
+            color: var(--mut);
+            font-weight: 400;
+            white-space: nowrap
+        }
+
+        .plist .empty {
+            padding: 20px 12px;
+            text-align: center;
+            color: var(--mut);
+            font-size: 12.5px
+        }
+
+        .err {
+            padding: 12px;
+            color: #b91c1c;
+            font-size: 12.5px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hd">
+        <h3>Tablo tipini seç</h3>
+        <div class="seg mode">
+            <button data-mode="li">li</button>
+            <button data-mode="ul">ul</button>
+            <button data-mode="table">table</button>
+        </div>
+    </div>
+    <div class="plist"></div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
